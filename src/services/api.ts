@@ -1,5 +1,5 @@
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://your-api-url.vercel.app/api' 
+  ? '/api' 
   : 'http://localhost:3001/api';
 
 export interface Recipe {
