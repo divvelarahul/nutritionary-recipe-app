@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -43,7 +42,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
       <div className="w-full max-w-5xl bg-white rounded-3xl shadow-2xl overflow-hidden">
         <div className="grid md:grid-cols-2 gap-0">
           {/* Left Side - Form */}
-          <motion.div
+          <div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -197,10 +196,10 @@ export function AuthPage({ onLogin }: AuthPageProps) {
                 Continue with Google
               </Button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Side - Illustration */}
-          <motion.div
+          <div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -219,7 +218,7 @@ export function AuthPage({ onLogin }: AuthPageProps) {
                 Personalized recipes, meal plans, and health guidance all in one place.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

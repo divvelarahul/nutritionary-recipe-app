@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { LogOut } from 'lucide-react';
 
 interface NavbarProps {
@@ -13,22 +12,17 @@ export function Navbar({ onNavigate, currentPage, userName, onLogout }: NavbarPr
   const isLoggedIn = !!userName;
 
   return (
-    <motion.nav
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm"
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <motion.div
-          whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-2 cursor-pointer"
+        <div
+          className="flex items-center gap-2 cursor-pointer hover:scale-105 transition-transform"
           onClick={() => onNavigate?.(isLoggedIn ? 'dashboard' : 'home')}
         >
           <span className="text-3xl">🥑</span>
           <span className="bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent">
             Nutritionary
           </span>
-        </motion.div>
+        </div>
 
         <div className="flex items-center gap-6">
           {!isLoggedIn ? (
@@ -58,20 +52,18 @@ export function Navbar({ onNavigate, currentPage, userName, onLogout }: NavbarPr
                   </div>
                   <span className="text-gray-700">{userName}</span>
                 </div>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                <button
                   onClick={onLogout}
-                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-rose-500 to-red-500 text-white rounded-full hover:shadow-lg transition-all"
+                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-rose-500 to-red-500 text-white rounded-full hover:shadow-lg hover:scale-105 transition-all"
                 >
                   <LogOut className="w-4 h-4" />
                   Logout
-                </motion.button>
+                </button>
               </div>
             </>
           )}
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 }

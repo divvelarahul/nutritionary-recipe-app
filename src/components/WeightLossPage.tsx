@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { TrendingDown, Sparkles } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
@@ -37,7 +36,7 @@ export function WeightLossPage({ onBack }: WeightLossPageProps) {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
@@ -51,10 +50,10 @@ export function WeightLossPage({ onBack }: WeightLossPageProps) {
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Delicious, low-calorie recipes designed to help you achieve your weight loss goals naturally
           </p>
-        </motion.div>
+        </div>
 
         {/* Meal Plan Generator */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -82,7 +81,7 @@ export function WeightLossPage({ onBack }: WeightLossPageProps) {
           </div>
 
           {mealPlan && (
-            <motion.div
+            <div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6"
@@ -90,7 +89,7 @@ export function WeightLossPage({ onBack }: WeightLossPageProps) {
               <h4 className="mb-4 text-gray-800">Your Daily Meal Plan</h4>
               <div className="space-y-3">
                 {mealPlan.map((meal, index) => (
-                  <motion.div
+                  <div
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -99,19 +98,19 @@ export function WeightLossPage({ onBack }: WeightLossPageProps) {
                   >
                     <span className="text-purple-600">•</span>
                     <span className="text-gray-700">{meal}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           )}
-        </motion.div>
+        </div>
 
         {/* Recipe Cards */}
         <div>
           <h2 className="mb-8 text-center text-gray-800">Featured Weight Loss Recipes</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {weightLossRecipes.map((recipe, index) => (
-              <motion.div
+              <div
                 key={recipe.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -121,13 +120,13 @@ export function WeightLossPage({ onBack }: WeightLossPageProps) {
                   recipe={recipe}
                   onClick={() => setSelectedRecipe(recipe)}
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Tips Section */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -157,7 +156,7 @@ export function WeightLossPage({ onBack }: WeightLossPageProps) {
               <p className="text-gray-600">7-8 hours of quality sleep</p>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Recipe Detail Modal */}

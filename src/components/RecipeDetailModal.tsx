@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'motion/react';
 import { X, Clock, Flame, CheckCircle2 } from 'lucide-react';
 import { Recipe } from './RecipeCard';
 import { ImageWithFallback } from './figma/ImageWithFallback';
@@ -14,14 +13,14 @@ export function RecipeDetailModal({ recipe, onClose }: RecipeDetailModalProps) {
 
   return (
     <AnimatePresence>
-      <motion.div
+      <div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         onClick={onClose}
       >
-        <motion.div
+        <div
           initial={{ opacity: 0, scale: 0.9, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -85,7 +84,7 @@ export function RecipeDetailModal({ recipe, onClose }: RecipeDetailModalProps) {
                 <h3 className="mb-4 text-gray-800">Ingredients</h3>
                 <div className="grid md:grid-cols-2 gap-3">
                   {recipe.ingredients.map((ingredient, index) => (
-                    <motion.div
+                    <div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -94,7 +93,7 @@ export function RecipeDetailModal({ recipe, onClose }: RecipeDetailModalProps) {
                     >
                       <CheckCircle2 className="w-5 h-5 text-teal-500 flex-shrink-0" />
                       <span className="text-gray-700">{ingredient}</span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -104,7 +103,7 @@ export function RecipeDetailModal({ recipe, onClose }: RecipeDetailModalProps) {
                 <h3 className="mb-4 text-gray-800">Preparation Steps</h3>
                 <div className="space-y-4">
                   {recipe.steps.map((step, index) => (
-                    <motion.div
+                    <div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -115,7 +114,7 @@ export function RecipeDetailModal({ recipe, onClose }: RecipeDetailModalProps) {
                         {index + 1}
                       </div>
                       <p className="text-gray-700 pt-1">{step}</p>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -125,7 +124,7 @@ export function RecipeDetailModal({ recipe, onClose }: RecipeDetailModalProps) {
                 <h3 className="mb-4 text-gray-800">Health Benefits</h3>
                 <div className="grid md:grid-cols-2 gap-3">
                   {recipe.healthBenefits.map((benefit, index) => (
-                    <motion.div
+                    <div
                       key={index}
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -134,32 +133,32 @@ export function RecipeDetailModal({ recipe, onClose }: RecipeDetailModalProps) {
                     >
                       <span className="text-lg">✨</span>
                       <span className="text-gray-700">{benefit}</span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
               </div>
 
               {/* Action Buttons */}
               <div className="flex gap-4">
-                <motion.button
+                <button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex-1 px-6 py-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
                   Start Cooking
-                </motion.button>
-                <motion.button
+                </button>
+                <button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="flex-1 px-6 py-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
                   Add to Meal Plan
-                </motion.button>
+                </button>
               </div>
             </div>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </AnimatePresence>
   );
 }

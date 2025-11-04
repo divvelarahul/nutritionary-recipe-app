@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { Search } from 'lucide-react';
 import { Input } from './ui/input';
 import { RecipeCard, Recipe } from './RecipeCard';
@@ -55,7 +54,7 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-purple-50 to-pink-50 pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
@@ -76,13 +75,13 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
               className="pl-12 py-6 text-lg rounded-2xl shadow-lg"
             />
           </div>
-        </motion.div>
+        </div>
 
         {!selectedDisease ? (
           <>
             {/* Show search results if available */}
             {showSearchResults && (
-              <motion.div
+              <div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-12"
@@ -94,7 +93,7 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
 
                 <div className="grid md:grid-cols-3 gap-6">
                   {searchedRecipes.map((recipe, index) => (
-                    <motion.div
+                    <div
                       key={recipe.id}
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -104,17 +103,17 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
                         recipe={recipe}
                         onClick={() => setSelectedRecipe(recipe)}
                       />
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             )}
 
             {/* Disease Cards Grid */}
             {!showSearchResults && (
               <div className="grid md:grid-cols-4 gap-6 mb-12">
                 {filteredDiseases.map((disease, index) => (
-                  <motion.div
+                  <div
                     key={disease.id}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -133,7 +132,7 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
                       </div>
                       <h3 className="text-gray-800">{disease.name}</h3>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
                 
                 {filteredDiseases.length === 0 && searchQuery && (
@@ -147,7 +146,7 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
         ) : (
           <>
             {/* Back Button */}
-            <motion.button
+            <button
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               onClick={() => {
@@ -157,10 +156,10 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
               className="mb-8 px-6 py-3 bg-white rounded-xl shadow-md hover:shadow-lg transition-all flex items-center gap-2"
             >
               ← Back to Conditions
-            </motion.button>
+            </button>
 
             {/* Disease Info */}
-            <motion.div
+            <div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="mb-12"
@@ -180,14 +179,14 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Recipe Cards */}
             <div>
               <h3 className="mb-6 text-gray-800">Recommended Recipes</h3>
               <div className="grid md:grid-cols-3 gap-6">
                 {currentRecipes.map((recipe, index) => (
-                  <motion.div
+                  <div
                     key={recipe.id}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -197,7 +196,7 @@ export function DiseasePage({ onBack }: DiseasePageProps) {
                       recipe={recipe}
                       onClick={() => setSelectedRecipe(recipe)}
                     />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 

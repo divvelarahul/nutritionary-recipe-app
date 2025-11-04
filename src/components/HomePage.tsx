@@ -1,15 +1,11 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import Autoplay from 'embla-carousel-autoplay';
 
 interface HomePageProps {
   onGetStarted: () => void;
 }
 
 export function HomePage({ onGetStarted }: HomePageProps) {
-  const carouselImages = [
     {
       url: 'https://images.unsplash.com/photo-1620019989479-d52fcedd99fe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMHNhbGFkJTIwYm93bHxlbnwxfHx8fDE3NjIwNjM4NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
       quote: 'Eat Smart. Live Better.'
@@ -39,7 +35,7 @@ export function HomePage({ onGetStarted }: HomePageProps) {
         </div>
 
         {/* Content */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -63,7 +59,7 @@ export function HomePage({ onGetStarted }: HomePageProps) {
             Discover personalized recipes for better health, weight management, and disease care.
           </motion.p>
 
-          <motion.button
+          <button
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.5 }}
@@ -73,24 +69,24 @@ export function HomePage({ onGetStarted }: HomePageProps) {
             className="px-10 py-4 bg-white text-teal-600 rounded-full shadow-2xl hover:shadow-3xl transition-all"
           >
             Get Started 🚀
-          </motion.button>
-        </motion.div>
+          </button>
+        </div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        <div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 1, repeat: Infinity, repeatType: 'reverse' }}
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
-            <motion.div
+            <div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
               className="w-1.5 h-1.5 bg-white rounded-full"
             />
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Carousel Section */}
@@ -118,9 +114,8 @@ export function HomePage({ onGetStarted }: HomePageProps) {
             className="w-full"
           >
             <CarouselContent>
-              {carouselImages.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                  <motion.div
+                  <div
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
@@ -137,7 +132,7 @@ export function HomePage({ onGetStarted }: HomePageProps) {
                         {item.quote}
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Heart, TrendingDown, TrendingUp } from 'lucide-react';
 
 interface DashboardProps {
@@ -39,7 +38,7 @@ export function Dashboard({ userName, onNavigate }: DashboardProps) {
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-purple-50 to-pink-50 pt-24 pb-12 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Welcome Section */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-12 text-center"
@@ -50,12 +49,12 @@ export function Dashboard({ userName, onNavigate }: DashboardProps) {
           <p className="text-xl text-gray-600">
             What would you like to explore today?
           </p>
-        </motion.div>
+        </div>
 
         {/* Feature Cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={feature.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,34 +69,34 @@ export function Dashboard({ userName, onNavigate }: DashboardProps) {
               <div className="relative bg-white rounded-3xl p-8 shadow-xl group-hover:shadow-2xl transition-all h-full">
                 <div className="flex flex-col items-center text-center h-full">
                   {/* Icon */}
-                  <motion.div
+                  <div
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.5 }}
                     className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${feature.gradient} flex items-center justify-center mb-6 shadow-lg`}
                   >
                     <span className="text-4xl">{feature.emoji}</span>
-                  </motion.div>
+                  </div>
 
                   {/* Content */}
                   <h3 className="mb-3 text-gray-800">{feature.title}</h3>
                   <p className="text-gray-600 mb-6 flex-grow">{feature.description}</p>
 
                   {/* Button */}
-                  <motion.button
+                  <button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`px-6 py-3 bg-gradient-to-r ${feature.gradient} text-white rounded-full shadow-md hover:shadow-lg transition-all`}
                   >
                     Explore Now
-                  </motion.button>
+                  </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Stats Section */}
-        <motion.div
+        <div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -115,7 +114,7 @@ export function Dashboard({ userName, onNavigate }: DashboardProps) {
             <div className="text-3xl mb-2 bg-gradient-to-r from-rose-500 to-pink-500 bg-clip-text text-transparent">10k+</div>
             <p className="text-gray-600">Happy Users</p>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <style>{`

@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'motion/react';
 import { Clock, Flame } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
@@ -27,7 +26,7 @@ interface RecipeCardProps {
 
 export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
   return (
-    <motion.div
+    <div
       whileHover={{ y: -8, scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer overflow-hidden"
@@ -64,6 +63,6 @@ export function RecipeCard({ recipe, onClick }: RecipeCardProps) {
           </span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

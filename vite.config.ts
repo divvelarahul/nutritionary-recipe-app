@@ -52,6 +52,15 @@
     build: {
       target: 'esnext',
       outDir: 'dist',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: ['react', 'react-dom'],
+            ui: ['lucide-react']
+          }
+        }
+      },
+      chunkSizeWarningLimit: 1000
     },
     server: {
       port: 3000,
