@@ -71,6 +71,7 @@
           "server": "node server/index.js",
           "seed": "node server/seedData.js",
           "seed:full": "node server/fullSeedData.js",
+          "seed:users": "node server/seedUsersAndFavorites.js",
           "dev:full": "concurrently \"npm run server\" \"npm run dev\""
       }
   }
